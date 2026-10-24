@@ -1,0 +1,354 @@
+{
+  "users": [
+    {
+      "id": "user-admin",
+      "name": "Alice Admin",
+      "token": "fX3jVrw2gnN8RAq4zv7CkPy5LWa0eJu1bM9sHD6QotE"
+    },
+    {
+      "id": "user-manager",
+      "name": "Morgan Manager",
+      "token": "sK9cBhV4dT2xJF0pL7mQyN8uW5rzG3aE6nH1oAvXikI"
+    },
+    {
+      "id": "user-viewer",
+      "name": "Vera Viewer",
+      "token": "vD5qTk8WJ0yPeR4gN2bAx6LrH1sCU3F9iz7mOaYwXnE"
+    },
+    {
+      "id": "user-viewer-2",
+      "name": "Victor Viewer",
+      "token": "hG2mQn7XzR4cV9wK1aF6sL8yT0bDP5eU3jNiAoCvWkM"
+    },
+    {
+      "id": "user-admin-2",
+      "name": "Alex Admin",
+      "token": "pR8wYj2NvK6bD0sL4aF9mT1xU7cHe5G3qZiAoCkXnVM"
+    },
+    {
+      "id": "user-outsider",
+      "name": "Ollie Outsider",
+      "token": "zN4xWc9TjH2bR7vL0mK5sD8yP1aFG6eU3qAiOoCvXkM"
+    }
+  ],
+  "tenants": [
+    {
+      "id": "tenant-a",
+      "name": "Shop A",
+      "members": {
+        "user-admin": "admin",
+        "user-manager": "manager",
+        "user-viewer": "viewer",
+        "user-viewer-2": "viewer"
+      },
+      "records": {
+        "products": [
+          {
+            "id": "product-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Coffee A",
+            "description": "Whole bean coffee",
+            "sku": "COFFEE-A",
+            "active": true
+          },
+          {
+            "id": "product-a-2",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Mug A",
+            "sku": "MUG-A",
+            "active": true
+          }
+        ],
+        "prices": [
+          {
+            "id": "price-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "product_id": "product-a-1",
+            "amount": 1200,
+            "currency": "USD",
+            "active": true
+          }
+        ],
+        "orders": [
+          {
+            "id": "order-a-viewer",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer",
+            "customer_id": "customer-a-1",
+            "total": 2400,
+            "currency": "USD",
+            "status": "pending"
+          },
+          {
+            "id": "order-a-other",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer-2",
+            "customer_id": "customer-a-2",
+            "total": 2400,
+            "currency": "USD",
+            "status": "pending"
+          },
+          {
+            "id": "order-a-manager",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-manager",
+            "customer_id": "customer-a-2",
+            "total": 2400,
+            "currency": "USD",
+            "status": "pending"
+          }
+        ],
+        "customers": [
+          {
+            "id": "customer-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Customer One",
+            "email": "one-a@example.com"
+          },
+          {
+            "id": "customer-a-2",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Customer Two",
+            "email": "two-a@example.com"
+          }
+        ],
+        "invoices": [
+          {
+            "id": "invoice-a-viewer",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer",
+            "order_id": "order-a-viewer",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "open",
+            "number": "INV-A-1"
+          },
+          {
+            "id": "invoice-a-other",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer-2",
+            "order_id": "order-a-other",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "open",
+            "number": "INV-A-2"
+          },
+          {
+            "id": "invoice-a-manager",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-manager",
+            "order_id": "order-a-manager",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "open",
+            "number": "INV-A-3"
+          }
+        ],
+        "payments": [
+          {
+            "id": "payment-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "order_id": "order-a-viewer",
+            "invoice_id": "invoice-a-viewer",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "succeeded",
+            "method": "card"
+          }
+        ],
+        "refunds": [
+          {
+            "id": "refund-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "payment_id": "payment-a-1",
+            "amount": 500,
+            "reason": "Partial refund",
+            "status": "succeeded"
+          }
+        ],
+        "inventory": [
+          {
+            "id": "inventory-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "product_id": "product-a-1",
+            "quantity": 100,
+            "location": "warehouse-1"
+          }
+        ],
+        "api-keys": [
+          {
+            "id": "api-key-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Seed integration",
+            "enabled": true,
+            "scopes": [
+              "products:read"
+            ],
+            "key": "ak_fixture_a_G2pRw8Qk7xN3sL6mV9cTa0bHd5eYj1UF"
+          }
+        ],
+        "audit-logs": [
+          {
+            "id": "audit-log-a-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "actor_id": "user-admin",
+            "action": "seed",
+            "resource": "products",
+            "resource_id": "product-a-1",
+            "details": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "tenant-b",
+      "name": "Shop B",
+      "members": {
+        "user-manager": "admin",
+        "user-viewer": "manager",
+        "user-admin": "viewer",
+        "user-viewer-2": "viewer",
+        "user-admin-2": "admin"
+      },
+      "records": {
+        "products": [
+          {
+            "id": "product-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Coffee B",
+            "description": "Whole bean coffee",
+            "sku": "COFFEE-B",
+            "active": true
+          },
+          {
+            "id": "product-b-2",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Mug B",
+            "sku": "MUG-B",
+            "active": true
+          }
+        ],
+        "prices": [
+          {
+            "id": "price-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "product_id": "product-b-1",
+            "amount": 1200,
+            "currency": "USD",
+            "active": true
+          }
+        ],
+        "orders": [
+          {
+            "id": "order-b-admin",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-admin",
+            "customer_id": "customer-b-1",
+            "total": 2400,
+            "currency": "USD",
+            "status": "pending"
+          },
+          {
+            "id": "order-b-other",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer-2",
+            "customer_id": "customer-b-2",
+            "total": 2400,
+            "currency": "USD",
+            "status": "pending"
+          }
+        ],
+        "customers": [
+          {
+            "id": "customer-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Customer One",
+            "email": "one-b@example.com"
+          },
+          {
+            "id": "customer-b-2",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Customer Two",
+            "email": "two-b@example.com"
+          }
+        ],
+        "invoices": [
+          {
+            "id": "invoice-b-admin",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-admin",
+            "order_id": "order-b-admin",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "open",
+            "number": "INV-B-1"
+          },
+          {
+            "id": "invoice-b-other",
+            "created_at": "2026-01-01T00:00:00Z",
+            "owner_id": "user-viewer-2",
+            "order_id": "order-b-other",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "open",
+            "number": "INV-B-2"
+          }
+        ],
+        "payments": [
+          {
+            "id": "payment-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "order_id": "order-b-admin",
+            "invoice_id": "invoice-b-admin",
+            "amount": 2400,
+            "currency": "USD",
+            "status": "succeeded",
+            "method": "card"
+          }
+        ],
+        "refunds": [
+          {
+            "id": "refund-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "payment_id": "payment-b-1",
+            "amount": 500,
+            "reason": "Partial refund",
+            "status": "succeeded"
+          }
+        ],
+        "inventory": [
+          {
+            "id": "inventory-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "product_id": "product-b-1",
+            "quantity": 100,
+            "location": "warehouse-1"
+          }
+        ],
+        "api-keys": [
+          {
+            "id": "api-key-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "name": "Seed integration",
+            "enabled": true,
+            "scopes": [
+              "products:read"
+            ],
+            "key": "ak_fixture_b_G2pRw8Qk7xN3sL6mV9cTa0bHd5eYj1UF"
+          }
+        ],
+        "audit-logs": [
+          {
+            "id": "audit-log-b-1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "actor_id": "user-manager",
+            "action": "seed",
+            "resource": "products",
+            "resource_id": "product-b-1",
+            "details": null
+          }
+        ]
+      }
+    }
+  ]
+}
